@@ -25,6 +25,7 @@
             padding: 10px;
             border-radius: 15px;
             background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            position: relative;
         }
 
         .main-heading {
@@ -57,6 +58,12 @@
             margin: 5px;
 
         }
+        .mode{
+           height: 40px;
+           position: absolute;
+           top: 10px;
+           right: 10px;
+        }
     </style>
 </head>
 
@@ -69,7 +76,13 @@
             dedicated to Lord Hanuman as he was born on this day. People worship Lord Hanuman and offer prayers to the
             lord. This day is also celebrated as Hanuman Janmotsav."Wishing you a happy Hanuman Jayanti, filled with
             blessings, peace, and prosperity. May Lord Hanuman's blessings be with you always."</p>
+
+            
+            <img src="./img/night-mode.png" class="mode" id="mode" onclick=" changeIcon()"/>
+           
     </div>
+
+
 
     <!-- javascript -->
 
@@ -107,10 +120,28 @@
                     imgElement.src = "./img/image6.png";
                     break;
 
-
             }
 
         }
+
+        //  change mode function with icon
+      
+        state =true;
+        function changeIcon()
+        {
+            const changeIconElement=document.getElementById("mode")
+          if(state===true)
+          {
+            changeIconElement.src="./img/night-mode.png";
+            state=false;
+          }
+          else{
+            changeIconElement.src="./img/day-mode.png";
+            state=true;
+          }
+        }
+
+        
     </script>
 
 </body>
