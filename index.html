@@ -58,39 +58,43 @@
             margin: 5px;
 
         }
-        .mode{
-           height: 40px;
-           position: absolute;
-           top: 10px;
-           right: 10px;
+
+        .mode {
+            height: 40px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
-        .active{
+
+        .active {
             border: 1px solid red;
         }
-        .bg-light{
+
+        .bg-light {
             background-color: white;
             color: black;
         }
-        .bg-dark{
+
+        .bg-dark {
             background-color: black;
             color: white;
         }
     </style>
 </head>
 
-<body >
+<body>
     <div class="main-container" id="container">
         <h1 class="main-heading">JAI SHREE RAM</h1>
-        <img src="./img/defult-img.png" class="header-img " id="img" onclick="changeImg()" />
+        <img src="./img/defult-img.png" class="header-img " id="img" onmouseover="changeImg()" />
         <p class="card-heading">HAPPY HANUMAN JANMOTSAV</p>
         <p class="card-desc">Hanuman Janmotsav is celebrated to remember the Hindu God, ‘Mahabali Hanuman’. This day is
             dedicated to Lord Hanuman as he was born on this day. People worship Lord Hanuman and offer prayers to the
             lord. This day is also celebrated as Hanuman Janmotsav."Wishing you a happy Hanuman Jayanti, filled with
             blessings, peace, and prosperity. May Lord Hanuman's blessings be with you always."</p>
 
-            
-            <img src="./img/night-mode.png" class="mode " id="mode" onclick=" changeIcon()"/>
-           
+
+        <img src="./img/night-mode.png" class="mode " id="mode" onclick=" changeIcon()" />
+
     </div>
 
 
@@ -136,35 +140,36 @@
         }
 
         //  change mode function with icon
-      
-       let state =true;
-        function changeIcon()
-        {
-            const changeIconElement=document.getElementById("mode")
-          if(state===true)
-          {
-          changeIconElement.src="./img/night-mode.png";
-            state=false;
 
-            // changeIconElement.classList.add("active"); 
-            // changeIconElement.classList.remove("active");
+        let state = true;
+        function changeIcon() {
+            const changeIconElement = document.getElementById("mode")
+            
+            if (state === true) {
+                changeIconElement.src = "./img/day-mode.png";
+                state = false;
 
-          let containerElement = document.getElementById("container"); 
-          containerElement.classList.add("bg-dark");
-          containerElement.classList.remove("bg-light")
+                // changeIconElement.classList.add("active"); 
+                // changeIconElement.classList.remove("active");
 
-          }
-          else{
-            changeIconElement.src="./img/day-mode.png";
-            state = true;
+                let containerElement = document.getElementById("container");
+                containerElement.classList.add("bg-dark");
+                containerElement.classList.remove("bg-light")
+                console.log(state);
 
-              let  containerElement = document.getElementById("container"); 
-          containerElement.classList.add("bg-light");
-          containerElement.classList.remove("bg-dark")
+            }
+            else {
+                changeIconElement.src = "./img/night-mode.png";
+                state = true;
 
-          }
+                let containerElement = document.getElementById("container");
+                containerElement.classList.add("bg-light");
+                containerElement.classList.remove("bg-dark")
+                console.log(state);
+
+            }
         }
-        
+
     </script>
 
 </body>
