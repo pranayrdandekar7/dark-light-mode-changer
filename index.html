@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DARL-LIGHT-MODE-CHANGER</title>
+    <title>DARK-LIGHT-MODE-CHANGER</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Russo+One&display=swap');
         /* font-family: "Anton", sans-serif; */
@@ -24,7 +24,7 @@
             border: 1px solid black;
             padding: 10px;
             border-radius: 15px;
-            background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
             position: relative;
         }
 
@@ -64,13 +64,24 @@
            top: 10px;
            right: 10px;
         }
+        .active{
+            border: 1px solid red;
+        }
+        .bg-light{
+            background-color: white;
+            color: black;
+        }
+        .bg-dark{
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 
-<body>
-    <div class="main-container">
+<body >
+    <div class="main-container" id="container">
         <h1 class="main-heading">JAI SHREE RAM</h1>
-        <img src="./img/defult-img.png" class="header-img" id="img" onclick="changeImg()" />
+        <img src="./img/defult-img.png" class="header-img " id="img" onclick="changeImg()" />
         <p class="card-heading">HAPPY HANUMAN JANMOTSAV</p>
         <p class="card-desc">Hanuman Janmotsav is celebrated to remember the Hindu God, ‘Mahabali Hanuman’. This day is
             dedicated to Lord Hanuman as he was born on this day. People worship Lord Hanuman and offer prayers to the
@@ -78,7 +89,7 @@
             blessings, peace, and prosperity. May Lord Hanuman's blessings be with you always."</p>
 
             
-            <img src="./img/night-mode.png" class="mode" id="mode" onclick=" changeIcon()"/>
+            <img src="./img/night-mode.png" class="mode " id="mode" onclick=" changeIcon()"/>
            
     </div>
 
@@ -126,21 +137,33 @@
 
         //  change mode function with icon
       
-        state =true;
+       let state =true;
         function changeIcon()
         {
             const changeIconElement=document.getElementById("mode")
           if(state===true)
           {
-            changeIconElement.src="./img/night-mode.png";
+          changeIconElement.src="./img/night-mode.png";
             state=false;
+
+            // changeIconElement.classList.add("active"); 
+            // changeIconElement.classList.remove("active");
+
+          let containerElement = document.getElementById("container"); 
+          containerElement.classList.add("bg-dark");
+          containerElement.classList.remove("bg-light")
+
           }
           else{
             changeIconElement.src="./img/day-mode.png";
-            state=true;
+            state = true;
+
+              let  containerElement = document.getElementById("container"); 
+          containerElement.classList.add("bg-light");
+          containerElement.classList.remove("bg-dark")
+
           }
         }
-
         
     </script>
 
