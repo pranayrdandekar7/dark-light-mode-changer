@@ -15,6 +15,7 @@
             margin: 0;
             padding: 0;
             background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            height: 100vh;
 
         }
 
@@ -45,6 +46,19 @@
             margin: 0 auto;
             filter: drop-shadow(0 0 10px rgb(233, 79, 79));
         }
+        .left-arrow-icon {
+            height: 40px;
+            position: absolute;
+            top: 150px;
+            left: 80px
+        }
+        .right-arrow-icon {
+            height: 40px;
+            position: absolute;
+            top: 150px;
+            right: 80px;
+        }
+
 
         .card-heading {
             font-size: 20px;
@@ -92,7 +106,7 @@
             .main-container {
            
             width: 90%;
-          margin: 50px auto;
+         
             padding: 7px;
         }
         .main-heading {
@@ -119,6 +133,14 @@
             height: 30px;
            
         }
+        .left-arrow-icon {
+          
+            left: 50px
+        }
+        .right-arrow-icon {
+           
+            right: 50px;
+        }
 
 
         }
@@ -128,7 +150,7 @@
 <body>
     <div class="main-container" id="container">
         <h1 class="main-heading">JAI SHREE RAM</h1>
-        <img src="./img/defult-img.png" class="header-img " id="img" onmouseover="changeImg()" />
+        <img src="./img/defult-img.png" class="header-img " id="img"  />
         <p class="card-heading">HAPPY HANUMAN JANMOTSAV</p>
         <p class="card-desc">Hanuman Janmotsav is celebrated to remember the Hindu God, ‘Mahabali Hanuman’. This day is
             dedicated to Lord Hanuman as he was born on this day. People worship Lord Hanuman and offer prayers to the
@@ -138,6 +160,8 @@
 
 
         <img src="./img/night-mode.png" class="mode " id="mode" onclick=" changeIcon()" />
+        <img src="./img/next.png" class="right-arrow-icon "  onclick="changeImg()" />
+        <img src="./img/previous.png" class=" left-arrow-icon "  onclick="changeImg()"  />
 
     </div>
 
